@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 x1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
 y1 = [16,0,0,0,0,0,0,0,0,0]
 y1 = [element / 10000 for element in y1]
-#plt.plot(x1, y1,marker='x', linestyle='dashdot', color='r', label='10 cm')
+#plt.plot(x1, y1,marker='.', linestyle='dashdot', color='r', label='10 cm')
 
 ## for 100 cm
 x2 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
@@ -43,10 +43,10 @@ x8 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
 y8 = [1.6176e-05,2.5473e-05,5.5924e-05,0.00012573,0.00017215,0.00024393,0.00018914,0.00021643,0.00038493,0.00038831]
 plt.plot(x8, y8,marker='x', linestyle='dashdot', color='purple', label='10000 cm (CMS)')
 
-plt.yscale('log')
 plt.title('LHCb Accpetance between T1 and T3 (780-950 cm) vs Mass')
 plt.xlabel('Mass (GeV)')
 plt.ylabel('Accpetance')
+plt.yscale('log')
 plt.legend()
 plt.savefig('Acc_781-950cm.pdf')  
 plt.show()

@@ -1,8 +1,21 @@
 import matplotlib.pyplot as plt
+import pandas as pd
 
+# import data from csv files
+data_cms10 = pd.read_csv("data/CMS/10cm.csv")
+data_cms100 = pd.read_csv("data/CMS/100cm.csv")
+data_cms1000 = pd.read_csv("data/CMS/1000cm.csv")
+data_cms10000 = pd.read_csv("data/CMS/10000cm.csv")
+data_lhcb10 = pd.read_csv("data/10cm.csv")
+data_lhcb100 = pd.read_csv("data/100cm.csv")
+data_lhcb1000 = pd.read_csv("data/1000cm.csv")
+data_lhcb10000 = pd.read_csv("data/10000cm.csv")
+
+# call the data
+x1,y1 = data_cms10[:1],data_cms10[:2]
 ## for 10 cm 
-x1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
-y1 = [6,0,0,0,0,0,0,0,0,0]
+#x1 = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+#y1 = [6,0,0,0,0,0,0,0,0,0]
 y1 = [element / 10000 for element in y1]
 #plt.plot(x1, y1,marker='x', linestyle='dashdot', color='r', label='10 cm')
 

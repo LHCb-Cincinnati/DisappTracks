@@ -24,7 +24,10 @@ int main() {
 
     // To use with statistics
     int neta_accepted = 0 ;
-    int ndecay_accepted = 0 ;
+    int ndecay1_accepted = 0 ;
+    int ndecay2_accepted = 0 ;
+    int ndecay3_accepted = 0 ;
+    int ndecay4_accepted = 0 ;
 
     // Initialize.
     pythia.init();
@@ -64,9 +67,19 @@ int main() {
                               event[i].yDec() * event[i].yDec() +
                               event[i].zDec() * event[i].zDec());            
                    //decVtx->Fill(dist);      
-                   if (dist > 0 && dist < 10000) {
-                      ndecay_accepted++;
-                    }         
+                   if (dist > 13000 && dist < 15300) {
+                      ndecay1_accepted++;
+                    }
+                    if (dist > 15000 && dist < 18700) {
+                      ndecay2_accepted++;
+                    }
+                    if (dist > 16300 && dist < 18700) {
+                        ndecay3_accepted++;
+                    }
+                    if (dist > 7800 && dist < 9500) {
+                        ndecay4_accepted++;
+                    }
+                             
         }   
         }
         }
@@ -79,8 +92,15 @@ int main() {
 
     cout << endl << nEvent << " events generated. " << neta_accepted
     << " events passed eta cut." << endl;
-    cout << endl << nEvent << " events generated. " << ndecay_accepted
-    << " events passed decay + eta cuts." << endl;
+    cout << endl << nEvent << " events generated. " << ndecay1_accepted
+    << " events passed between M1-M2 + eta ." << endl;
+    cout << endl << nEvent << " events generated. " << ndecay2_accepted
+    << " events passed between M2-M5 + eta ." << endl;
+    cout << endl << nEvent << " events generated. " << ndecay3_accepted
+    << " events passed between M3-M5 + eta ." << endl;
+    cout << endl << nEvent << " events generated. " << ndecay4_accepted
+    << " events passed between T1-T3 + eta ." << endl;
+
 
     
     // Show histogram. Possibility to close it.
